@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your MBTI Animal</title>
+    <link rel="icon" href="https://pbs.twimg.com/media/DwoJM1RVsAARW6x.png">
+</head>
+
+
+
+
+<style>
+    @font-face {
+        font-family: pixelify-sans;
+        src: url(Pixelify_Sans/PixelifySans-VariableFont_wght.ttf);
+    }
+
+    .body {
+        background-color: rgb(157, 124, 200);
+        margin: 50px;
+        text-align: center;
+        font-family: sans-serif;
+       /* cursor:url('Assets/9iRLyzBLT.png') 128px 128px,auto;*/
+    }
+
+
+    .container {
+        background-color: rgb(245, 221, 255);
+        padding: 50px 50px 50px 50px;
+    }
+
+    .question {
+        text-align: center;
+        margin: 10px;
+        font-size: 18px;
+
+    }
+
+
+    .result {
+        padding-top: 50px;
+    }
+
+    .button-yesno {
+        background-color: #ffce72;
+        font-family: pixelify-sans;
+        padding: 5px 3px;
+        border-radius: 8px;
+        padding: 8px 15px;
+        box-shadow: 0 5px #666;
+    }
+
+
+    .button-generate {
+        background-color: #ffce72;
+        font-family: pixelify-sans;
+        padding: 5px 3px;
+        border-radius: 8px;
+        padding: 8px 15px;
+        box-shadow: 0 5px #666;
+    }
+
+    .button-yesno:active {
+        background-color: #ffa229;
+        box-shadow: 0 2px #666;
+        transform: translateY(4px);
+    }
+
+    .button-generate:active {
+        background-color: #ffa229;
+        box-shadow: 0 2px #666;
+        transform: translateY(4px);
+    }
+
+
+    .input {
+        padding: 8px 8px 8px 8px;
+        border-radius: 8px;
+    }
+</style>
+
+<body class="body">
+    <div class="container">
+
+
+        <h1 style="font-family: pixelify-sans;">
+            Your MBTI Animal
+
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2h2bzJoc2FtbjRsMnJhZGp6ZHN1c2phdHRjcmhsZ3lrZ2FleWt0MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/SM3OPfKLXiuFSOvHhD/giphy.gif"
+                style="width: 50px;">
+
+            <br><br>
+        </h1>
+
+
+
+
+        <h3 style="font-size: 20px;">
+
+            • Quickly test your mbti! •<br><br><br>
+        </h3>
+
+
+
+        <!--Questions-->
+
+        <p class="question">
+
+
+            1. You prefer being around people rather than being alone &nbsp;
+            <button onclick="letter1();" class="button-yesno">
+                Yes
+            </button>
+
+            <button onclick="letter2();" class="button-yesno">
+                No
+            </button>
+
+            = <span id="i-or-e"></span>
+
+
+
+
+
+            <br><br><br>
+
+
+
+            2. You tend to focus more on the present rather then the future &nbsp;
+            <button onclick="letter3();" class="button-yesno">
+                Yes
+            </button>
+
+            <button onclick="letter4();" class="button-yesno">
+                No
+            </button>
+
+            = <span id="n-or-s"></span>
+
+
+
+            <br><br><br>
+
+
+
+
+            3. You prioritize feelings of others more than factual information &nbsp;
+            <button onclick="letter5();" class="button-yesno">
+                Yes
+            </button>
+
+            <button onclick="letter6();" class="button-yesno">
+                No
+            </button>
+
+            = <span id="t-or-f"></span>
+
+
+
+            <br><br><br>
+
+
+
+            4. You like to plan out your schedule rather than spontaeous actions &nbsp;
+            <button onclick="letter7();" class="button-yesno">
+                Yes
+            </button>
+
+            <button onclick="letter8();" class="button-yesno">
+                No
+            </button>
+
+            = <span id="p-or-j"></span>
+
+
+        </p>
+
+
+
+
+
+        <!--Generator-->
+
+
+        <div class="result">
+
+            <h3 style="font-size:20px;">
+
+                Your Animal is a ...
+            </h3>
+
+            <br>
+
+            <input type="text" placeholder="Your 4 letter MBTI..." id="input-Mbti" class="input">
+
+            <button onclick="generateAnimal(); generateAnimalName();" class="button-generate">
+                Generate
+            </button>
+
+            <div id="output">
+            </div>
+
+
+            <div id="name-output" style="font-family: pixelify-sans; font-size: 20px; padding-top: 10px;">
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+
+
+        //question
+
+        function letter1() {
+            const yes = document.querySelector("#i-or-e")
+            yes.innerHTML = "";
+            yes.innerHTML = "E";
+        }
+
+        function letter2() {
+            const no = document.querySelector("#i-or-e")
+            no.innerHTML = "";
+            no.innerHTML = "I";
+        }
+
+        function letter3() {
+            const yes2 = document.querySelector("#n-or-s")
+            yes2.innerHTML = "";
+            yes2.innerHTML = "S";
+        }
+
+        function letter4() {
+            const no2 = document.querySelector("#n-or-s")
+            no2.innerHTML = "";
+            no2.innerHTML = "N";
+        }
+
+        function letter5() {
+            const yes3 = document.querySelector("#t-or-f")
+            yes3.innerHTML = "";
+            yes3.innerHTML = "F";
+        }
+
+        function letter6() {
+            const no3 = document.querySelector("#t-or-f")
+            no3.innerHTML = "";
+            no3.innerHTML = "T";
+        }
+
+        function letter7() {
+
+            const yes4 = document.querySelector("#p-or-j")
+            yes4.innerHTML = "";
+            yes4.innerHTML = "J";
+        }
+
+        function letter8() {
+            const no4 = document.querySelector("#p-or-j")
+            no4.innerHTML = "";
+            no4.innerHTML = "P";
+        }
+
+
+
+
+
+
+        // IMAGE GENERATOR
+
+
+        let images = {
+            "ESTP": "Assets/ESTP-hyena.png",
+            "ESFP": "Assets/ESFP-fennecfox.jpg",
+            "ESTJ": "Assets/ESTJ-cheetah.jpg",
+            "ESFJ": "Assets/ESFJ-racoon.png",
+
+            "ENTJ": "Assets/ENTJ-lion.jpg",
+            "ENFJ": "Assets/ENFJ-dog.png",
+            "ENTP": "Assets/ENTP-fox.jpg",
+            "ENFP": "Assets/ENFP-squirrel.jpg",
+
+            "ISTP": "Assets/ISTP-cat.png",
+            "ISFP": "Assets/ISFP-seaotter.jpg",
+            "ISTJ": "Assets/ISTJ-beaver.jpg",
+            "ISFJ": "Assets/ISFJ-mouse.jpg",
+
+            "INTP": "Assets/INTP-owl.jpg",
+            "INFP": "Assets/INFP-seahorse.jpg",
+            "INTJ": "Assets/INTJ-snake.png",
+            "INFJ": "Assets/INFJ-bunny.jpg",
+
+        }
+
+
+
+        function generateAnimal() {
+
+            const animalOutput = document.querySelector("#output");
+            const mbtiInput = document.querySelector("#input-Mbti");
+            const mbtiValue = mbtiInput.value;
+            const mbtiValueCap = mbtiValue.toUpperCase();
+
+            if (images[mbtiValueCap]) {
+                animalOutput.innerHTML = `<img src="${images[mbtiValueCap]}" style= "width: 500px; padding-top: 20px;">`;
+
+            } else {
+                animalOutput.innerHTML = '<div style="color: red; margin-top: 15px;">Please enter a valid MBTI</div>';
+
+            }
+
+        }
+
+
+
+        // Name GENERATOR
+
+        let animalName = {
+            "ESTP": "Hyena",
+            "ESFP": "Fennec Fox",
+            "ESTJ": "Cheetah",
+            "ESFJ": "Raccoon",
+
+            "ENTJ": "Lion",
+            "ENFJ": "Dog",
+            "ENTP": "Fox",
+            "ENFP": "Squirrel",
+
+            "ISTP": "Cat",
+            "ISFP": "Sea Otter",
+            "ISTJ": "Beaver",
+            "ISFJ": "Mouse",
+
+            "INTP": "Owl",
+            "INFP": "Sea Horse",
+            "INTJ": "Snake",
+            "INFJ": "Bunny",
+
+        }
+
+
+        function generateAnimalName() {
+
+            const nameOutput = document.querySelector("#name-output");
+            const mbtiInput = document.querySelector("#input-Mbti");
+            const mbtiValue = mbtiInput.value;
+            const mbtiValueCap = mbtiValue.toUpperCase();
+
+            if (animalName[mbtiValueCap]) {
+
+                nameOutput.innerHTML = `<div style'padding-top: 10px; font-family='pixelify-sans';>${animalName[mbtiValueCap]} ! </div>`;
+
+            } else {
+                nameOutput.innerHTML = "";
+            }
+
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
